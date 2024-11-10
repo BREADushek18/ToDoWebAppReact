@@ -5,20 +5,16 @@ import ShareModal from './ShareModal';
 import InfoModal from './InfoModal';
 import '../../styles/tasks.scss';
 
-const TaskList = ({ tasks, deleteTask, editTask, shareTask, gifs }) => {
+const TaskList = ({ tasks, deleteTask, editTask, gifs }) => {
     const [activeTaskIndex, setActiveTaskIndex] = useState(null);
     const [isEditModalOpen, setEditModalOpen] = useState(false);
     const [isShareModalOpen, setShareModalOpen] = useState(false);
     const [isInfoModalOpen, setInfoModalOpen] = useState(false);
     const [currentGif, setCurrentGif] = useState(null);
-    const [currentTask, setCurrentTask] = useState({ title: '', description: '' });
+    const [currentTask, setCurrentTask] = useState({ index: null, title: '', description: '' });
 
     const handleTaskClick = (index) => {
-        if (activeTaskIndex === index) {
-            setActiveTaskIndex(null);
-        } else {
-            setActiveTaskIndex(index);
-        }
+        setActiveTaskIndex(activeTaskIndex === index ? null : index);
     };
 
     const handleEditTask = (index) => {
@@ -40,16 +36,8 @@ const TaskList = ({ tasks, deleteTask, editTask, shareTask, gifs }) => {
     };
 
     const handleSaveEdit = (newTitle, newDesc) => {
-        if (newTitle.trim() === '') {
-            alert('Название задачи не может быть пустым!');
-            return;
-        }
-
-        // Обновляем задачу
-        const updatedTitle = newTitle.length > 28 ? newTitle.slice(0, 28) + '...' : newTitle;
-        const updatedDesc = newDesc.length > 28 ? newDesc.slice(0, 28) + '...' : newDesc;
-
-        editTask(currentTask.index, updatedTitle, updatedDesc);
+        if (newTitle.trim() === '') return;
+        editTask(currentTask.index, newTitle, newDesc);
         setEditModalOpen(false);
     };
 

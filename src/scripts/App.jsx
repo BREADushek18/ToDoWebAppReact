@@ -29,7 +29,7 @@ export default function App() {
     }, []);
 
     const addTask = (title, description) => {
-        const newTask = { title, description }; // Убираем поле gif
+        const newTask = { title, description };
         const updatedTasks = [...tasks, newTask];
         setTasks(updatedTasks);
         saveTasks(updatedTasks);
@@ -67,8 +67,8 @@ export default function App() {
             <TaskList 
                 tasks={tasks} 
                 deleteTask={openDeleteModal} 
-                editTask={editTask} // Передаем функцию editTask
-                gifs={gifs} // Передаем массив GIF в TaskList
+                editTask={editTask} 
+                gifs={gifs} 
             />
             <DeleteTaskModal 
                 isOpen={isModalOpen} 

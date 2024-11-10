@@ -9,10 +9,6 @@ const EditModal = ({ isOpen, onClose, onSave, fullTitle, fullDesc }) => {
         setNewDesc(fullDesc);
     }, [fullTitle, fullDesc]);
 
-    const handleSave = () => {
-        onSave(newTitle, newDesc);
-    };
-
     return (
         <div className={`edit-modal ${isOpen ? 'show' : ''}`} onClick={onClose}>
             <div className="modal-content" onClick={(e) => e.stopPropagation()}>
@@ -29,7 +25,7 @@ const EditModal = ({ isOpen, onClose, onSave, fullTitle, fullDesc }) => {
                 ></textarea>
                 <div className="modal-buttons">
                     <button id="cancel-edit" onClick={onClose}>Cancel</button>
-                    <button id="save-edit" onClick={handleSave}>Save</button>
+                    <button id="save-edit" onClick={() => onSave(newTitle, newDesc)}>Save</button>
                 </div>
             </div>
         </div>
