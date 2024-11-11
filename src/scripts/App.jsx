@@ -66,6 +66,7 @@ export default function App() {
             <TaskInput addTask={addTask} />
             <TaskList 
                 tasks={tasks} 
+                setTasks={setTasks} 
                 deleteTask={openDeleteModal} 
                 editTask={editTask} 
                 gifs={gifs} 
