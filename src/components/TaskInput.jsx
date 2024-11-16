@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../../styles/layout.scss';
+import '../styles/layout.scss';
 
 const TaskInput = ({ addTask }) => {
     const [title, setTitle] = useState('');

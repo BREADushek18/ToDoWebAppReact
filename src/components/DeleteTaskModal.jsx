@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../styles/modals.scss';
+import '../styles/modals.scss';
 
 const DeleteTaskModal = ({ isOpen, onClose, onDelete }) => {
     return (

@@ -1,20 +1,20 @@
 import React, { useState, useEffect } from 'react';
-import { loadTasks, saveTasks } from '../scripts/utils/localStorage.js';
-import TaskInput from '../scripts/components/TaskInput';
-import TaskList from '../scripts/components/TaskList';
-import DeleteTaskModal from '../scripts/components/DeleteTaskModal'; 
-import '../styles/base.scss';
-import '../styles/buttons.scss';
-import '../styles/layout.scss';
-import '../styles/modals.scss';
-import '../styles/notes.scss';
-import '../styles/tasks.scss';
+import { loadTasks, saveTasks } from './utils/localStorage.js';
+import TaskInput from './components/TaskInput';
+import TaskList from './components/TaskList';
+import DeleteTaskModal from './components/DeleteTaskModal'; 
+import './styles/base.scss';
+import './styles/buttons.scss';
+import './styles/layout.scss';
+import './styles/modals.scss';
+import './styles/notes.scss';
+import './styles/tasks.scss';
 
-import cat1 from '../assets/images/cat1.gif';
-import cat2 from '../assets/images/cat2.gif';
-import cat3 from '../assets/images/cat3.gif';
-import cat4 from '../assets/images/cat4.gif';
-import cat5 from '../assets/images/cat5.gif';
+import cat1 from './assets/images/cat1.gif';
+import cat2 from './assets/images/cat2.gif';
+import cat3 from './assets/images/cat3.gif';
+import cat4 from './assets/images/cat4.gif';
+import cat5 from './assets/images/cat5.gif';
 
 const gifs = [cat1, cat2, cat3, cat4, cat5];
 

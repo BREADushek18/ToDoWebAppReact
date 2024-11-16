@@ -3,7 +3,7 @@ import SpecButtons from './SpecButtons';
 import EditModal from './EditModal';
 import ShareModal from './ShareModal';
 import InfoModal from './InfoModal';
-import '../../styles/tasks.scss';
+import '../styles/tasks.scss';
 
 const DraggableTaskList = ({ tasks, setTasks, deleteTask, editTask, gifs }) => {
     const [draggedIndex, setDraggedIndex] = useState(null);
@@ -61,12 +61,13 @@ const DraggableTaskList = ({ tasks, setTasks, deleteTask, editTask, gifs }) => {
     };
 
     const truncateText = (text) => {
+        if (!text) return ''; 
         return text.length > 28 ? text.slice(0, 28) + '...' : text;
     };
 
     return (
         <>
-            {tasks.map((task, index) => (
+            {tasks && tasks.map((task, index) => (
                 <div
                     className="task"
                     key={index}

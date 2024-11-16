@@ -1,6 +1,6 @@
 import React from 'react';
 import DraggableTaskList from './DraggableTaskList';
-import '../../styles/tasks.scss';
+import '../styles/tasks.scss';
 
 const TaskList = ({ tasks, setTasks, deleteTask, editTask, gifs }) => {
     return (

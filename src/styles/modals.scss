@@ -1,11 +1,7 @@
-$primary-color: #FF8303;
-$dark-orange: #A35709;
-$background-color: #1B1A17;
-$text-color: #F0E3CA;
-$task-background: #1F1E1B;
+@import 'variables';
 
 .modal {
-    display: block; // Скрыто по умолчанию
+    display: block; 
     position: fixed;
     z-index: 10;
     left: 0;
@@ -16,14 +12,14 @@ $task-background: #1F1E1B;
     font-weight: 400;
     line-height: 1.5;
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.7); // Затемнение фона
-    visibility: hidden; // Скрываем по умолчанию
-    opacity: 0; // Скрываем по умолчанию
-    transition: visibility 0s, opacity 0.5s linear; // Плавный переход
+    background-color: rgba(0, 0, 0, 0.7); 
+    visibility: hidden; 
+    opacity: 0; 
+    transition: visibility 0s, opacity 0.5s linear; 
 
     &.show {
-        visibility: visible; // Показываем при открытом состоянии
-        opacity: 1; // Показываем при открытом состоянии
+        visibility: visible; 
+        opacity: 1; 
     }
 
     .modal-content {
@@ -64,7 +60,7 @@ $task-background: #1F1E1B;
 .edit-modal,
 .share-modal,
 .info-modal {
-    display: flex; // Используем flex для центрирования
+    display: flex; 
     position: fixed;
     top: 0;
     left: 0;
@@ -74,13 +70,13 @@ $task-background: #1F1E1B;
     justify-content: center;
     align-items: center;
     z-index: 10;
-    visibility: hidden; // Скрываем по умолчанию
-    opacity: 0; // Скрываем по умолчанию
-    transition: visibility 0s, opacity 0.5s linear; // Плавный переход
+    visibility: hidden; 
+    opacity: 0; 
+    transition: visibility 0s, opacity 0.5s linear; 
 
     &.show {
-        visibility: visible; // Показываем при открытом состоянии
-        opacity: 1; // Показываем при открытом состоянии
+        visibility: visible; 
+        opacity: 1; 
     }
 
     .modal-content {
@@ -101,11 +97,11 @@ $task-background: #1F1E1B;
             border: 2px solid $dark-orange;
             border-radius: 4px;
             font-size: 14px;
-            transition: border-color 0.3s; // Плавный переход при фокусе
+            transition: border-color 0.3s; 
             background-color: $task-background;
             color: $text-color;
-            resize: none; // Запрет на изменение размера
-            overflow: hidden; // Запрет на прокрутку
+            resize: none; 
+            overflow: hidden; 
 
             &:focus {
                 border-color: $primary-color;
@@ -168,7 +164,7 @@ $task-background: #1F1E1B;
 
 .info-modal {
     .modal-content {
-        background-color: $background-color; // Цвет фона модального окна
+        background-color: $background-color; 
         padding: 20px;
         border-radius: 8px;
         text-align: center;

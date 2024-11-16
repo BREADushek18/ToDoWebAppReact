@@ -11,24 +11,24 @@ const ShareModal = ({ isOpen, onClose, fullTitle, fullDescription }) => {
             .catch(err => console.error('Ошибка копирования: ', err));
     };
 
+    const icons = [
+        { src: "../src/assets/icons/vk-modal-share.svg", alt: "VK" },
+        { src: "../src/assets/icons/telegram-modal-share.svg", alt: "Telegram" },
+        { src: "../src/assets/icons/whatsapp-modal-share.svg", alt: "WhatsApp" },
+        { src: "../src/assets/icons/facebook-modal-share.svg", alt: "Facebook" },
+    ];
+
     return (
         <div className={`share-modal ${isOpen ? 'show' : ''}`} onClick={onClose}>
             <div className="modal-content" onClick={(e) => e.stopPropagation()}>
                 <button onClick={handleCopy}>
                     <img src="../src/assets/icons/copy-modal-share.svg" alt="Копировать" />
                 </button>
-                <button className="icon-button">
-                    <img src="../src/assets/icons/vk-modal-share.svg" />
-                </button>
-                <button className="icon-button">
-                    <img src="../src/assets/icons/telegram-modal-share.svg" alt="Telegram" />
-                </button>
-                <button className="icon-button">
-                    <img src="../src/assets/icons/whatsapp-modal-share.svg" alt="WhatsApp" />
-                </button>
-                <button className="icon-button">
-                    <img src="../src/assets/icons/facebook-modal-share.svg" alt="Facebook" />
-                </button>
+                {icons.map((icon, index) => (
+                    <button key={index} className="icon-button">
+                        <img src={icon.src} alt={icon.alt} />
+                    </button>
+                ))}
             </div>
         </div>
     );

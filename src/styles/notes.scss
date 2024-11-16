@@ -1,8 +1,4 @@
-$primary-color: #FF8303;
-$dark-orange: #A35709;
-$background-color: #1B1A17;
-$text-color: #F0E3CA;
-$task-background: #1F1E1B;
+@import 'variables';
 
 .new-note-container {
     max-width: 600px;
